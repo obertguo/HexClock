@@ -22,11 +22,19 @@
         color: white; font: 64px/64px Lato; height: 64px;
     }
 
+    #time{
+        position: relative; top: 50%;
+        text-align: center;
+        color: white; font: 32px/32px Lato; height: 32px;
+    }
+
         </style>
 
         <body>
                 <div id="hex">
                     <h1 id = "hexcode"></h1>
+                    <br>
+                    <p id = "time"></p>
                 </div>
 
             <script>
@@ -44,10 +52,13 @@
                             if(s <= 9) s = '0'+s;
 
                                 color = "#"+h+m+s;
+                                time = h + "h:" + m + "m:" + s + "s";
                                     //set background color
                                         document.getElementById("hex").style.background = color;
                                     //set time
                                         document.getElementById("hexcode").innerHTML = color;
+
+                                        document.getElementById("time").innerHTML = time;
 
                                     //retrigger the function every second
                                         setTimeout(displayTime, 1000);
@@ -58,3 +69,5 @@
             </script>
         </body>
     </html>
+
+        
