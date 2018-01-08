@@ -7,49 +7,54 @@
     /*basic reset*/
     * {margin: 0; padding: 0;}
     /*make the body occupy full height*/
-    html, body {height: 100%;}
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
 
     #hex {
-        color: white; font: 64px/64px Lato; height: 64px;
-        /*Vertical centering*/
-        position: relative; top: 50%; margin-top: -32px;
-        /*Horizontal centering*/
+        height: 100%;
+    }
+
+    #hexcode{
+        position: relative; top: 50%;
         text-align: center;
+        color: white; font: 64px/64px Lato; height: 64px;
     }
 
         </style>
 
         <body>
-                <div id="hex"></div>
+                <div id="hex">
+                    <h1 id = "hexcode"></h1>
+                </div>
 
             <script>
                 //lets display the current time
-var d, h, m, s, color;
-function displayTime() {
-    d = new Date(); //new data object
-    h = d.getHours();
-    m = d.getMinutes();
-    s = d.getSeconds();
+                    var d, h, m, s, color;
+                    function displayTime() {
+                    d = new Date(); //new data object
+                    h = d.getHours();
+                    m = d.getMinutes();
+                    s = d.getSeconds();
 
-    //add zero to the left of the numbers if they are single digits
-    if(h <= 9) h = '0'+h;
-    if(m <= 9) m = '0'+m;
-    if(s <= 9) s = '0'+s;
+                        //add zero to the left of the numbers if they are single digits
+                            if(h <= 9) h = '0'+h;
+                            if(m <= 9) m = '0'+m;
+                            if(s <= 9) s = '0'+s;
 
-    color = "#"+h+m+s;
-    //set background color
-    document.body.style.background = color;
-    //set time
-    document.getElementById("hex").innerHTML = color;
+                                color = "#"+h+m+s;
+                                    //set background color
+                                        document.getElementById("hex").style.background = color;
+                                    //set time
+                                        document.getElementById("hexcode").innerHTML = color;
 
-    //retrigger the function every second
-    setTimeout(displayTime, 1000);
-}
+                                    //retrigger the function every second
+                                        setTimeout(displayTime, 1000);
+                    }
 
-//call the function
-displayTime();
+                                    //call the function
+                                    displayTime();
             </script>
         </body>
     </html>
-
-        
